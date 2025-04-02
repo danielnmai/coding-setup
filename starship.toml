@@ -9,7 +9,7 @@ $git_status\
 style = "fg:#e3e5e5 bg:#769ff0"
 format = "[](bg:#769ff0 fg:#a3aed2)[ $path ]($style)[](fg:#769ff0)"
 repo_root_style = "fg:#e3e5e5 bg:#769ff0"
-repo_root_format = "[](bg:#769ff0 fg:#a3aed2)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[](fg:#769ff0 bg:#394260)"
+repo_root_format = "[](bg:#769ff0 fg:#a3aed2)[ $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path ]($style)[](fg:#769ff0 bg:#394260)"
 truncation_length = 3
 truncate_to_repo = false
 truncation_symbol = "…/"
@@ -23,7 +23,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)[](fg:#394260 bg:#394260)'
 
 [git_status]
 style = "bg:#394260"
