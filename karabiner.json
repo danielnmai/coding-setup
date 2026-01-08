@@ -312,7 +312,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS LOCK + B -> Open Browser (Google Chrome)",
+                        "description": "CAPS LOCK + B -> Open Browser (Chromium)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -326,7 +326,7 @@
                                     "key_code": "b",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "shell_command": "open '/Applications/Google Chrome.app'" }],
+                                "to": [{ "shell_command": "open '/Applications/Chromium.app'" }],
                                 "type": "basic"
                             }
                         ]
