@@ -1,4 +1,3 @@
-
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
@@ -61,3 +60,22 @@ keymap({"n", "v"}, "<leader>h9", "<cmd>lua require('vscode').action('vscode-harp
 keymap({"n", "v"}, "<leader>pa", "<cmd>lua require('vscode').action('projectManager.saveProject')<CR>")
 keymap({"n", "v"}, "<leader>po", "<cmd>lua require('vscode').action('projectManager.listProjectsNewWindow')<CR>")
 keymap({"n", "v"}, "<leader>pe", "<cmd>lua require('vscode').action('projectManager.editProjects')<CR>")
+
+-- folding keymaps
+vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = false, silent = true })
+vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = false, silent = true })
+
+local vscode = require('vscode')
+
+local function map(mode, lhs, rhs)
+  vim.keymap.set(mode, lhs, function() vscode.call(rhs) end, { silent = true, noremap = true })
+end
+
+-- Remap folding keys
+map('n', 'zM', 'editor.foldAll')
+map('n', 'zR', 'editor.unfoldAll')
+map('n', 'zc', 'editor.fold')
+map('n', 'zC', 'editor.foldRecursively')
+map('n', 'zo', 'editor.unfold')
+map('n', 'zO', 'editor.unfoldRecursively')
+map('n', 'za', 'editor.toggleFold')
