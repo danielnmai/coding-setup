@@ -64,3 +64,15 @@ Custom keybindings for the VSCode Neovim extension. Leader key is `<Space>`.
 | `<leader>pa` | n, v | Save project |
 | `<leader>po` | n, v | List projects (new window) |
 | `<leader>pe` | n, v | Edit projects |
+
+## Folding
+
+| Keymap | Mode | Action |
+|--------|------|--------|
+| `zM` | n | Fold all |
+| `zR` | n | Unfold all |
+| `zc` | n | Fold |
+| `zC` | n | Fold recursively |
+| `zo` | n | Unfold |
+| `zO` | n | Unfold recursively |
+| `za` | n | Toggle fold |
