@@ -590,31 +590,6 @@
             ]
           },
           {
-            "description": "CAPS LOCK + G to jump to bracket",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "caps_lock pressed",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "g",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to": [
-                  {
-                    "key_code": "backslash",
-                    "modifiers": ["left_command", "left_shift"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "CAPS LOCK + V -> Open Visual Studio Code",
             "manipulators": [
               {
@@ -718,6 +693,26 @@
                   "modifiers": { "optional": ["any"] }
                 },
                 "to": [{ "shell_command": "open '/Applications/Slack.app'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "CAPS LOCK + G -> Open Google Chrome",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "caps_lock pressed",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "g",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "shell_command": "open '/Applications/Google Chrome.app'" }],
                 "type": "basic"
               }
             ]
