@@ -1,5 +1,13 @@
 return {
-  'glacambre/firenvim',
-  lazy = not vim.g.started_by_firenvim,
-  build = ":call firenvim#install(0)"
+  "glacambre/firenvim",
+  enabled = false,
+  build = ":call firenvim#install(0)",
+  config = function()
+    vim.g.firenvim_config = {
+      localSettings = {
+        ["https?://.*\\.atlassian\\.net/"] = { takeover = "never" },
+        ["https?://.*\\.google\\.com/"] = { takeover = "never" },
+      },
+    }
+  end,
 }
