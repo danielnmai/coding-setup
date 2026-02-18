@@ -25,3 +25,11 @@ ln -s /path/to/coding-setup/RectangleConfig.json ~/Library/Application\ Support/
 ```
 
 **Note:** Remove or back up any existing config files before creating symlinks.
+
+## Karabiner
+
+Always edit `karabiner.json` directly in this repo. **Do not use the Karabiner GUI to add/modify rules** — Karabiner breaks the symlink every time it writes the config (it does an atomic rename instead of writing in-place). If you do use the GUI, restore the symlink afterwards:
+
+```bash
+ln -sf /path/to/coding-setup/karabiner.json ~/.config/karabiner/karabiner.json
+```
