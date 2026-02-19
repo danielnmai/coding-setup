@@ -12,6 +12,7 @@ https://www.atlassian.com/git/tutorials/dotfiles
 - **starship** — `.config/starship.toml`
 - **kitty** — `.config/kitty/kitty.conf`
 - **tmux-powerline** — `.config/tmux-powerline/`
+- **rectangle** — `RectangleConfig.json`
 
 ## New machine setup
 
@@ -69,3 +70,7 @@ export NPM_TOKEN_GITHUB="..."
 ```bash
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 ```
+
+### 7. Import Rectangle config
+
+Install Rectangle, then use **Preferences → Import** to load `~/RectangleConfig.json`.
