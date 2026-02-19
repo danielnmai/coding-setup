@@ -1,4 +1,4 @@
-# Coding setup I need to run before doing coding work in a new computer
+# Setting up coding environment
 
 Personal config files tracked with a bare git repo. Setup approach from:
 https://www.atlassian.com/git/tutorials/dotfiles
