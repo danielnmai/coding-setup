@@ -1,1 +1,12 @@
-/Users/daniel.mai/daniel/coding-setup/starship.toml
+format = """
+$directory\
+$git_branch\
+$git_status\
+$line_break\
+$shell\
+$character
+"""
+
+[directory]
+truncation_length = 10 
+truncate_to_repo = false
