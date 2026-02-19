@@ -1,0 +1,7 @@
+[user]
+	name = Daniel Mai
+	email = daniel.mai@careaccess.com
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = false
