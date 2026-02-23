@@ -1,4 +1,4 @@
-# dotfiles
+# Setting up coding environment
 
 Personal config files tracked with a bare git repo. Setup approach from:
 https://www.atlassian.com/git/tutorials/dotfiles
