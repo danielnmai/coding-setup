@@ -90,6 +90,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Increase Node.js memory for TypeScript language server
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

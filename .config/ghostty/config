@@ -1,1 +1,2 @@
-theme = tokyonight
+theme = nightfox
+macos-option-as-alt = true
