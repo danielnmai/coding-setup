@@ -136,10 +136,13 @@ export NVM_DIR="$HOME/.nvm"
 # Starship prompt
 eval "$(starship init zsh)"
 
-export PATH="/Users/daniel.mai/.nvm/versions/node/v24.12.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
-export PATH=/Users/daniel.mai/.opencode/bin:$PATH
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-alias config='/usr/bin/git --git-dir=/Users/daniel.mai/.cfg/ --work-tree=/Users/daniel.mai'
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# libpq - detect Homebrew prefix
+export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
+
+# Dotfiles management alias
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
