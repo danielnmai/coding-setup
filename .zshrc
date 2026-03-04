@@ -137,10 +137,6 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(starship init zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
-
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
-
 # libpq - detect Homebrew prefix
 export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 
