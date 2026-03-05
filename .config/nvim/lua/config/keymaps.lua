@@ -4,3 +4,5 @@
 
 vim.keymap.set('t', '<C-/>', '<cmd>close<cr>', { desc = "Hide Terminal" })
 vim.keymap.set('t', '<C-_>', '<cmd>close<cr>', { desc = "Hide Terminal" })
+
+vim.keymap.set('n', '<leader>rn', ':set rnu!<CR>', { desc = "Toggle Relative Number" })
