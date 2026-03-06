@@ -8,6 +8,7 @@ return {
         function()
           require("smart-splits").move_cursor_left()
         end,
+        mode = { "n", "t" },
         desc = "Move to left pane",
       },
       {
@@ -15,6 +16,7 @@ return {
         function()
           require("smart-splits").move_cursor_down()
         end,
+        mode = { "n", "t" },
         desc = "Move to below pane",
       },
       {
@@ -22,6 +24,7 @@ return {
         function()
           require("smart-splits").move_cursor_up()
         end,
+        mode = { "n", "t" },
         desc = "Move to above pane",
       },
       {
@@ -29,6 +32,7 @@ return {
         function()
           require("smart-splits").move_cursor_right()
         end,
+        mode = { "n", "t" },
         desc = "Move to right pane",
       },
       {
@@ -36,6 +40,7 @@ return {
         function()
           require("smart-splits").resize_left()
         end,
+        mode = { "n", "t" },
         desc = "Resize left",
       },
       {
@@ -43,6 +48,7 @@ return {
         function()
           require("smart-splits").resize_down()
         end,
+        mode = { "n", "t" },
         desc = "Resize down",
       },
       {
@@ -50,6 +56,7 @@ return {
         function()
           require("smart-splits").resize_up()
         end,
+        mode = { "n", "t" },
         desc = "Resize up",
       },
       {
@@ -57,6 +64,7 @@ return {
         function()
           require("smart-splits").resize_right()
         end,
+        mode = { "n", "t" },
         desc = "Resize right",
       },
     },

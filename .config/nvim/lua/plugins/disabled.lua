@@ -10,6 +10,9 @@ return {
       explorer = {
         enabled = false,
       },
+      terminal = {
+        enabled = false,
+      },
     },
   },
 }

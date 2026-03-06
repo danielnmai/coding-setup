@@ -6,3 +6,20 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+-- -- Disable treesitter highlighting and matchparen for large files
+-- local group = vim.api.nvim_create_augroup("LargeFile", { clear = true })
+-- vim.api.nvim_create_autocmd("BufReadPre", {
+--   group = group,
+--   callback = function()
+--     local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
+--     if stats and stats.size > 1024 * 40 then -- 40 KB
+--       vim.cmd("setlocal eventignore+=BufEnter,BufWritePost,CursorHold,CursorHoldI,InsertEnter")
+--       pcall(vim.cmd, "TSBufDisable highlight")
+--       pcall(vim.cmd, "TSBufDisable indent")
+--       pcall(vim.cmd, "NoMatchParen")
+--       vim.cmd("setlocal nocursorline")
+--       vim.cmd("setlocal nocursorcolumn")
+--       vim.cmd("syntax sync minlines=100") -- Drastically reduces sync time
+--     end
+--   end,
+-- })

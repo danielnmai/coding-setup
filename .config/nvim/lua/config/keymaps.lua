@@ -2,7 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set('t', '<C-/>', '<cmd>close<cr>', { desc = "Hide Terminal" })
-vim.keymap.set('t', '<C-_>', '<cmd>close<cr>', { desc = "Hide Terminal" })
-
-vim.keymap.set('n', '<leader>rn', ':set rnu!<CR>', { desc = "Toggle Relative Number" })
+vim.keymap.set("n", "<leader>rn", ":set rnu!<CR>", { desc = "Toggle Relative Number" })
+vim.schedule(function()
+  vim.keymap.set("n", "<c-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+  vim.keymap.set("t", "<c-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+  vim.keymap.set("n", "<c-_>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+  vim.keymap.set("t", "<c-_>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
+end)
