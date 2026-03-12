@@ -57,7 +57,7 @@ config config --local status.showUntrackedFiles no
 **Debian/Ubuntu:**
 
 ```bash
-sudo apt install git zsh tmux neovim curl
+sudo apt install git zsh tmux neovim curl build-essential
 chsh -s $(which zsh)
 ```
 
