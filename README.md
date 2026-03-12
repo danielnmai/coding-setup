@@ -57,7 +57,7 @@ config config --local status.showUntrackedFiles no
 **Debian/Ubuntu:**
 
 ```bash
-sudo apt install git zsh tmux neovim curl
+sudo apt install git zsh tmux neovim curl build-essential
 chsh -s $(which zsh)
 ```
 
@@ -126,13 +126,36 @@ export NPM_TOKEN_GITHUB="..."
 
 ### 7. Install tmux plugins
 
-Install tpm (Tmux Plugin Manager), then fetch plugins:
+The `.tmux.conf` will auto-install tpm on first launch. Start tmux and reload the config:
 
 ```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/scripts/install_plugins.sh
+tmux
+tmux source ~/.tmux.conf
 ```
 
-### 8. Import Rectangle config (macOS only)
+Then press `prefix + I` (Ctrl-b, then Shift+I) to install plugins.
+
+### 8. Set up LazyVim
+
+LazyVim requires some external tools:
+
+**Debian/Ubuntu:**
+
+```bash
+sudo apt install ripgrep fd-find
+```
+
+> Note: on Debian/Ubuntu the binary is `fdfind` instead of `fd`. Create a symlink if needed:
+> `ln -s $(which fdfind) ~/.local/bin/fd`
+
+**macOS:**
+
+```bash
+brew install ripgrep fd
+```
+
+Then open `nvim` — LazyVim will automatically install its plugins on first launch.
+
+### 9. Import Rectangle config (macOS only)
 
 Install Rectangle, then use **Preferences → Import** to load `~/RectangleConfig.json`.
