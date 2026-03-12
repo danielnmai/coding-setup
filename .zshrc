@@ -147,3 +147,6 @@ fi
 
 # Dotfiles management alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# SSH tunnel to work MacBook via Tailscale
+alias tunnel-work="ssh -N -L 3000:localhost:3000 -L 5432:localhost:5432 daniel.mai@100.122.209.27"
