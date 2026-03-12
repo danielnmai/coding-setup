@@ -126,8 +126,10 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 # Secrets are stored in ~/.secrets (not tracked by git)
 [ -f ~/.secrets ] && source ~/.secrets
 
- #Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+ # Set up fzf key bindings and fuzzy completion
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -137,8 +139,11 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(starship init zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
-# libpq - detect Homebrew prefix
-export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
+
+# macOS-specific: Homebrew and libpq
+if [[ "$(uname)" == "Darwin" ]] && command -v brew &> /dev/null; then
+  export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
+fi
 
 # Dotfiles management alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
