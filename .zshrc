@@ -148,9 +148,12 @@ fi
 # Dotfiles management alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# pyenv (Debian only)
+if [[ -f /etc/os-release ]] && grep -qi debian /etc/os-release; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 alias tunnel-work="ssh -L 3000:localhost:3000 -L 5432:localhost:5432 daniel.mai@100.122.209.27"
 alias tunnel-home="ssh -L 3000:localhost:3000 -L 8000:localhost:8000 -L 5432:localhost:5432 danielmai@100.83.120.45"
