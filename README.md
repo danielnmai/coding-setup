@@ -16,13 +16,50 @@ https://www.atlassian.com/git/tutorials/dotfiles
 
 ## New machine setup
 
-### 1. Clone the bare repo
+### 1. Download essential apps (macOS)
+
+- [Ungoogled Chromium](https://ungoogled-software.github.io/ungoogled-chromium-binaries/)
+  - Install the [Chromium Web Store](https://github.com/nicedoc/nicedoc.io) extension to enable installing extensions from the Chrome Web Store
+  - [Bitwarden](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb) — password manager
+  - [Vimium](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) — vim-like navigation
+- [Slack](https://slack.com/downloads/mac)
+- [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+
+### 2. Install Homebrew (macOS)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### 3. Set up GitHub SSH key
+
+Generate a new SSH key and add it to your GitHub account:
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+Copy the public key and add it at https://github.com/settings/keys:
+
+```bash
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+### 4. Install Oh My Zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 5. Clone the bare repo
 
 ```bash
 git clone --bare git@github.com:danielnmai/dotfiles.git ~/.cfg
 ```
 
-### 2. Set up the `config` alias
+### 6. Set up the `config` alias
 
 ```bash
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -30,7 +67,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 Add this to your `.zshrc` so it persists.
 
-### 3. Check out dotfiles
+### 7. Check out dotfiles
 
 ```bash
 config checkout
@@ -44,13 +81,13 @@ config checkout 2>&1 | grep "\s\+\." | awk '{print $1}' | xargs -I{} mv {} ~/.co
 config checkout
 ```
 
-### 4. Hide untracked files in status
+### 8. Hide untracked files in status
 
 ```bash
 config config --local status.showUntrackedFiles no
 ```
 
-### 5. Install dependencies
+### 9. Install dependencies
 
 #### Core tools
 
@@ -69,13 +106,7 @@ brew install zsh tmux neovim curl
 
 > git is included with Xcode Command Line Tools (`xcode-select --install`).
 
-#### Oh My Zsh
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Then install the custom plugins:
+#### Oh My Zsh custom plugins
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -109,7 +140,7 @@ brew install fzf
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ```
 
-### 6. Set up secrets
+### 10. Set up secrets
 
 Create `~/.secrets` (not tracked) with any tokens or keys:
 
@@ -124,9 +155,15 @@ Add secrets as exports, e.g.:
 export NPM_TOKEN_GITHUB="..."
 ```
 
-### 7. Install tmux plugins
+### 11. Install tmux plugins
 
-The `.tmux.conf` will auto-install tpm on first launch. Start tmux and reload the config:
+First, install tpm (Tmux Plugin Manager):
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Then start tmux and reload the config:
 
 ```bash
 tmux
@@ -135,7 +172,7 @@ tmux source ~/.tmux.conf
 
 Then press `prefix + I` (Ctrl-b, then Shift+I) to install plugins.
 
-### 8. Set up LazyVim
+### 12. Set up LazyVim
 
 LazyVim requires some external tools:
 
@@ -156,6 +193,6 @@ brew install ripgrep fd
 
 Then open `nvim` — LazyVim will automatically install its plugins on first launch.
 
-### 9. Import Rectangle config (macOS only)
+### 13. Import Rectangle config (macOS only)
 
 Install Rectangle, then use **Preferences → Import** to load `~/RectangleConfig.json`.
