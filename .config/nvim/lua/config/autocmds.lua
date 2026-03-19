@@ -6,6 +6,16 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Auto-save on buffer change
+-- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+--   group = vim.api.nvim_create_augroup("autosave", { clear = true }),
+--   callback = function(event)
+--     if vim.bo[event.buf].modified and vim.bo[event.buf].buftype == "" then
+--       vim.cmd("silent! write")
+--     end
+--   end,
+-- })
 -- -- Disable treesitter highlighting and matchparen for large files
 -- local group = vim.api.nvim_create_augroup("LargeFile", { clear = true })
 -- vim.api.nvim_create_autocmd("BufReadPre", {

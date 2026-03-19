@@ -1,3 +1,4 @@
 theme = kanagawa wave
 macos-option-as-alt = true
 clipboard-read = allow
+font-size = 12

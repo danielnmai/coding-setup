@@ -158,11 +158,11 @@ fi
 alias tunnel-work="ssh -L 3000:localhost:3000 -L 5432:localhost:5432 daniel.mai@100.122.209.27"
 alias tunnel-home="ssh -L 3000:localhost:3000 -L 8000:localhost:8000 -L 5432:localhost:5432 danielmai@100.83.120.45"
 tunnel-server() {
-  local ports="-L 3000:localhost:3000 -L 8000:localhost:8000 -L 5432:localhost:5432"
+  local -a ports=(-L 3000:localhost:3000 -L 8000:localhost:8000 -L 5432:localhost:5432)
   # Skip port forwarding if ports are already bound
   if lsof -iTCP:3000 -sTCP:LISTEN &>/dev/null; then
-    ports=""
+    ports=()
   fi
-  ssh $ports -t daniel@100.117.226.105 "tmux new-session -A -s ssh-$$"
+  ssh $ports -t daniel@danserver "tmux new-session -A -s ssh-$$"
 }
 export COLORTERM=truecolor
