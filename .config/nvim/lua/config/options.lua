@@ -1,6 +1,9 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+
+-- Use .git as the primary root marker so monorepo root is detected instead of nested package.json
+vim.g.root_spec = { { ".git" }, "cwd" }
 vim.opt.relativenumber = true
 -- vim.opt.number = false
 
