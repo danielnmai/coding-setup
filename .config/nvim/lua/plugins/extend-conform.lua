@@ -14,7 +14,10 @@ local web_filetypes = {
 }
 
 local function web_formatter(bufnr)
-  -- Use prettier if the project has a prettier config, otherwise use biome
+  -- Use oxfmt if available, otherwise fall back to prettier/biome
+  if require("conform").get_formatter_info("oxfmt", bufnr).available then
+    return { "oxfmt" }
+  end
   if require("conform").get_formatter_info("prettier", bufnr).available then
     return { "prettier" }
   end

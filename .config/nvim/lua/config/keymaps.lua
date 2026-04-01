@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>rn", ":set rnu!<CR>", { desc = "Toggle Relative Number" })
+vim.keymap.set("n", "<A-S-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<A-S-k>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.schedule(function()
   vim.keymap.set("n", "<c-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
   vim.keymap.set("t", "<c-/>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })

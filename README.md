@@ -180,7 +180,7 @@ LazyVim requires some external tools:
 **Debian/Ubuntu:**
 
 ```bash
-sudo apt install ripgrep fd-find
+sudo apt install ripgrep fd-find lazygit
 ```
 
 > Note: on Debian/Ubuntu the binary is `fdfind` instead of `fd`. Create a symlink if needed:
@@ -189,7 +189,7 @@ sudo apt install ripgrep fd-find
 **macOS:**
 
 ```bash
-brew install ripgrep fd
+brew install ripgrep fd lazygit
 ```
 
 Then open `nvim` — LazyVim will automatically install its plugins on first launch.
