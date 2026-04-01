@@ -166,3 +166,4 @@ tunnel-server() {
   ssh $ports -t daniel@danserver "tmux new-session -A -s ssh-$$"
 }
 export COLORTERM=truecolor
+export XDG_CONFIG_HOME="$HOME/.config"

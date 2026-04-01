@@ -1,0 +1,14 @@
+[
+  {
+    "QueryText": "SELECT * FROM \"public\".\"ParticipantProgramVisit\" WHERE \"participantID\" = '7cd24891-6e95-4629-b22c-c4cc0a87bc5c' LIMIT 300 OFFSET 0",
+    "Timestamp": "2026-03-25T21:04:41.169655Z"
+  },
+  {
+    "QueryText": "select * from \"ParticipantProgramVisit\"",
+    "Timestamp": "2026-03-25T21:01:48.670913Z"
+  },
+  {
+    "QueryText": "select * from \"ParticipantProgramVisit\" limit 1",
+    "Timestamp": "2026-03-25T20:59:48.113361Z"
+  }
+]

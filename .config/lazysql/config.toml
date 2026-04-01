@@ -1,0 +1,23 @@
+ConfigFile = '/Users/daniel.mai/.config/lazysql/config.toml'
+
+[application]
+DefaultPageSize = 300
+DisableSidebar = false
+SidebarOverlay = false
+MaxQueryHistoryPerConnection = 100
+TreeWidth = 30
+JSONViewerWordWrap = false
+
+[[database]]
+Name = 'care-console-local'
+URL = 'postgresql://postgres:postgres@localhost/careconsole_development?sslmode=disable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'careconsole_development'
+URLParams = ''
+ReadOnly = false
+Schemas = []
+Commands = []
