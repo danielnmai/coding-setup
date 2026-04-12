@@ -1,7 +1,7 @@
 return {
   {
     "joryeugene/dadbod-grip.nvim",
-    enabled = false,
+    enabled = true,
     version = "*",
     keys = {
       { "<leader>Ds", "<cmd>GripStart<cr>", desc = "Grip Start" },
