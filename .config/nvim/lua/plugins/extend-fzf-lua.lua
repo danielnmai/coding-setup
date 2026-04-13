@@ -3,7 +3,7 @@ return {
     "ibhagwan/fzf-lua",
     opts = function(_, opts)
       opts.defaults = opts.defaults or {}
-      opts.defaults.formatter = "path.filename_first"
+      opts.defaults.formatter = { "path.filename_first", 2 }
 
       opts.keymap = opts.keymap or {}
       opts.keymap.builtin = opts.keymap.builtin or {}
