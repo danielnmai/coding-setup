@@ -22,6 +22,7 @@ https://www.atlassian.com/git/tutorials/dotfiles
   - Install the [Chromium Web Store](https://github.com/nicedoc/nicedoc.io) extension to enable installing extensions from the Chrome Web Store
   - [Bitwarden](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb) — password manager
   - [Vimium](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) — vim-like navigation
+- [Ghostty](https://ghostty.org/)
 - [Slack](https://slack.com/downloads/mac)
 - [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
 
@@ -179,7 +180,7 @@ LazyVim requires some external tools:
 **Debian/Ubuntu:**
 
 ```bash
-sudo apt install ripgrep fd-find
+sudo apt install ripgrep fd-find lazygit
 ```
 
 > Note: on Debian/Ubuntu the binary is `fdfind` instead of `fd`. Create a symlink if needed:
@@ -188,7 +189,7 @@ sudo apt install ripgrep fd-find
 **macOS:**
 
 ```bash
-brew install ripgrep fd
+brew install ripgrep fd lazygit
 ```
 
 Then open `nvim` — LazyVim will automatically install its plugins on first launch.
